@@ -1,0 +1,8 @@
+C:\Projects\Work\ToDo\ToDo.DataAccess\bin\Release\netcoreapp3.1\ToDo.DataAccess.deps.json
+C:\Projects\Work\ToDo\ToDo.DataAccess\bin\Release\netcoreapp3.1\ToDo.DataAccess.dll
+C:\Projects\Work\ToDo\ToDo.DataAccess\bin\Release\netcoreapp3.1\ToDo.DataAccess.pdb
+C:\Projects\Work\ToDo\ToDo.DataAccess\obj\Release\netcoreapp3.1\ToDo.DataAccess.csprojAssemblyReference.cache
+C:\Projects\Work\ToDo\ToDo.DataAccess\obj\Release\netcoreapp3.1\ToDo.DataAccess.AssemblyInfoInputs.cache
+C:\Projects\Work\ToDo\ToDo.DataAccess\obj\Release\netcoreapp3.1\ToDo.DataAccess.AssemblyInfo.cs
+C:\Projects\Work\ToDo\ToDo.DataAccess\obj\Release\netcoreapp3.1\ToDo.DataAccess.dll
+C:\Projects\Work\ToDo\ToDo.DataAccess\obj\Release\netcoreapp3.1\ToDo.DataAccess.pdb

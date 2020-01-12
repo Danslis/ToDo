@@ -1,0 +1,8 @@
+C:\Projects\Work\ToDo\ToDo.Logging\bin\Debug\netcoreapp3.1\ToDo.Logging.deps.json
+C:\Projects\Work\ToDo\ToDo.Logging\bin\Debug\netcoreapp3.1\ToDo.Logging.dll
+C:\Projects\Work\ToDo\ToDo.Logging\bin\Debug\netcoreapp3.1\ToDo.Logging.pdb
+C:\Projects\Work\ToDo\ToDo.Logging\obj\Debug\netcoreapp3.1\ToDo.Logging.csprojAssemblyReference.cache
+C:\Projects\Work\ToDo\ToDo.Logging\obj\Debug\netcoreapp3.1\ToDo.Logging.AssemblyInfoInputs.cache
+C:\Projects\Work\ToDo\ToDo.Logging\obj\Debug\netcoreapp3.1\ToDo.Logging.AssemblyInfo.cs
+C:\Projects\Work\ToDo\ToDo.Logging\obj\Debug\netcoreapp3.1\ToDo.Logging.dll
+C:\Projects\Work\ToDo\ToDo.Logging\obj\Debug\netcoreapp3.1\ToDo.Logging.pdb

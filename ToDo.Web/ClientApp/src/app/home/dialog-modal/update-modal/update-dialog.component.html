@@ -1,0 +1,53 @@
+<mat-toolbar color="primary">
+    <h1>Отредактировать карточку</h1>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+  <div class="container-fluid mt-3">
+    <form novalidate class="col-md-12" [formGroup]="updateForm" #formDirective="ngForm">
+      <div class="form-row">
+        <div class="col-md-6">
+          <mat-form-field>
+            <input matInput type="text" placeholder="Название карточки" formControlName="name">
+            <mat-error *ngIf="updateForm.controls['name'].hasError('required')">Название карточки не может быть пустым</mat-error>
+            <mat-error *ngIf="updateForm.controls['name'].hasError('maxlength')">Длина строки не может превышать 50 символов</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field>
+            <mat-label>Время исполнения</mat-label>
+            <mat-select formControlName="timeOfCompletion">
+              <mat-option *ngFor="let item of timeOfCompletionArr" [value]="item.id">
+                {{item.value}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="updateForm.controls['timeOfCompletion'].hasError('required')">Поле время исполнения не может быть пустым</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <mat-form-field>
+            <mat-label>Приоритет</mat-label>
+            <mat-select formControlName="priority">
+              <mat-option *ngFor="let item of priorityArr" [value]="item.id">
+                {{item.value}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="updateForm.controls['priority'].hasError('required')">Поле приоритет не может быть пустым</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="onCancelClick()">
+    Отмена
+  </button>
+  <button id ="submit-button" mat-raised-button
+    [disabled]="updateForm.controls.name.invalid || updateForm.controls.timeOfCompletion.invalid || updateForm.controls.priority.invalid"
+    (click)="onApplyClick()">
+    Применить
+  </button>
+</mat-dialog-actions>

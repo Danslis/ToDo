@@ -1,0 +1,169 @@
+<div class="example-container">
+  <form>
+    <div class="board">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="header-board">Делаем&nbsp;сегодня</h6>
+            </div>
+            <div cdkDropList
+                 id="1"
+                 #todoDuringTheTodayList="cdkDropList"
+                 [cdkDropListData]="todoDuringTheToday"
+                 [cdkDropListConnectedTo]="[todoDuringTheTomorrowList,todoDuringTheWeekList,todoDuringTheMonthList,todoDoneList]"
+                 class="list-group list-group-flush"
+                 (cdkDropListDropped)="drop($event)">
+              <div *ngIf="todoDuringTheToday.length === 0">&nbsp;</div>
+              <div class="list-group-item list-group-item-danger" *ngFor="let item of todoDuringTheToday" cdkDrag [attr.name]="item.name">
+                <span class="up-button-card">
+                  <mat-icon title="Редактировать" (click)="editCard(item)" class="btn cursor-pointer edit-link"> edit</mat-icon>
+                  <mat-icon title="Удалить" (click)="deleteCard(item.id, item.timeOfCompletion,item.name)" class="btn cursor-pointer delete-link">delete</mat-icon>
+                </span>
+                <br />
+                <span class="card-font-size"><b>Приоритет:&nbsp;{{getPriority(item.priority)}}</b></span>
+                <br />
+                <span class="card-font-size"><b>Дата&nbsp;создания:&nbsp;{{item.date | date:'dd.MM.yyyy'}}</b></span>
+                <br />
+                <span class="card-font-size">
+                  {{item.name}}
+                </span>
+                <br>
+                <span class="check-button"><mat-icon title="Сделано" (click)="submitDone(item)" class="btn cursor-pointer done-link"> check</mat-icon></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="header-board">Делаем&nbsp;завтра</h6>
+            </div>
+            <div cdkDropList
+                 id="2"
+                 #todoDuringTheTomorrowList="cdkDropList"
+                 [cdkDropListData]="todoDuringTheTomorrow"
+                 [cdkDropListConnectedTo]="[todoDuringTheTodayList,todoDuringTheWeekList,todoDuringTheMonthList,todoDoneList]"
+                 class="list-group list-group-flush"
+                 (cdkDropListDropped)="drop($event)">
+              <div *ngIf="todoDuringTheTomorrow.length === 0">&nbsp;</div>
+              <div class="list-group-item list-group-item-warning" *ngFor="let item of todoDuringTheTomorrow" cdkDrag [attr.name]="item.name">
+                <span class="up-button-card">
+                  <mat-icon title="Редактировать" (click)="editCard(item)" class="btn cursor-pointer edit-link"> edit</mat-icon>
+                  <mat-icon title="Удалить" (click)="deleteCard(item.id, item.timeOfCompletion,item.name)" class="btn cursor-pointer delete-link">delete</mat-icon>
+                </span>
+                <br />
+                <span class="card-font-size"><b>Приоритет:&nbsp;{{getPriority(item.priority)}}</b></span>
+                <br />
+                <span class="card-font-size"><b>Дата&nbsp;создания:&nbsp;{{item.date | date:'dd.MM.yyyy'}}</b></span>
+                <br />
+                <span class="card-font-size">
+                  {{item.name}}
+                </span>
+                <br>
+                <span class="check-button"><mat-icon title="Сделано" (click)="submitDone(item)" class="btn cursor-pointer done-link"> check</mat-icon></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="header-board">Делаем&nbsp;на&nbsp;этой&nbsp;неделе</h6>
+            </div>
+            <div cdkDropList
+                 id="3"
+                 #todoDuringTheWeekList="cdkDropList"
+                 [cdkDropListData]="todoDuringTheWeek"
+                 [cdkDropListConnectedTo]="[todoDuringTheTodayList,todoDuringTheTomorrowList,todoDuringTheMonthList,todoDoneList]"
+                 class="list-group list-group-flush"
+                 (cdkDropListDropped)="drop($event)">
+              <div *ngIf="todoDuringTheWeek.length === 0">&nbsp;</div>
+              <div class="list-group-item list-group-item-primary" *ngFor="let item of todoDuringTheWeek" cdkDrag [attr.name]="item.name">
+                <span class="up-button-card">
+                  <mat-icon title="Редактировать" (click)="editCard(item)" class="btn cursor-pointer edit-link"> edit</mat-icon>
+                  <mat-icon title="Удалить" (click)="deleteCard(item.id, item.timeOfCompletion,item.name)" class="btn cursor-pointer delete-link">delete</mat-icon>
+                </span>
+                <br />
+                <span class="card-font-size"><b>Приоритет:&nbsp;{{getPriority(item.priority)}}</b></span>
+                <br />
+                <span class="card-font-size"><b>Дата&nbsp;создания:&nbsp;{{item.date | date:'dd.MM.yyyy'}}</b></span>
+                <br />
+                <span class="card-font-size">
+                  {{item.name}}
+                </span>
+                <br>
+                <span class="check-button"><mat-icon title="Сделано" (click)="submitDone(item)" class="btn cursor-pointer done-link"> check</mat-icon></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="header-board">Делаем&nbsp;в&nbsp;этом&nbsp;месяце</h6>
+            </div>
+            <div cdkDropList
+                 id="4"
+                 #todoDuringTheMonthList="cdkDropList"
+                 [cdkDropListData]="todoDuringTheMonth"
+                 [cdkDropListConnectedTo]="[todoDuringTheTodayList,todoDuringTheTomorrowList,todoDuringTheWeekList,todoDoneList]"
+                 class="list-group list-group-flush"
+                 (cdkDropListDropped)="drop($event)">
+              <div *ngIf="todoDuringTheMonth.length === 0">&nbsp;</div>
+              <div class="list-group-item list-group-item-info" *ngFor="let item of todoDuringTheMonth" cdkDrag [attr.name]="item.name">
+                <span class="up-button-card">
+                  <mat-icon title="Редактировать" (click)="editCard(item)" class="btn cursor-pointer edit-link"> edit</mat-icon>
+                  <mat-icon title="Удалить" (click)="deleteCard(item.id, item.timeOfCompletion,item.name)" class="btn cursor-pointer delete-link">delete</mat-icon>
+                </span>
+                <br />
+                <span class="card-font-size"><b>Приоритет:&nbsp;{{getPriority(item.priority)}}</b></span>
+                <br />
+                <span class="card-font-size"><b>Дата&nbsp;создания:&nbsp;{{item.date | date:'dd.MM.yyyy'}}</b></span>
+                <br />
+                <span class="card-font-size">
+                  {{item.name}}
+                </span>
+                <br>
+                <span class="check-button"><mat-icon title="Сделано" (click)="submitDone(item)" class="btn cursor-pointer done-link"> check</mat-icon></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="header-board">Сделано</h6>
+            </div>
+            <div cdkDropList
+                 id="5"
+                 #todoDoneList="cdkDropList"
+                 [cdkDropListData]="todoDone"
+                 [cdkDropListConnectedTo]="[todoDuringTheTodayList,todoDuringTheTomorrowList,todoDuringTheWeekList,todoDuringTheMonthList]"
+                 class="list-group list-group-flush"
+                 (cdkDropListDropped)="drop($event)">
+              <div *ngIf="todoDone.length === 0">&nbsp;</div>
+              <div class="list-group-item list-group-item-success" *ngFor="let item of todoDone" cdkDrag [attr.name]="item.name">
+
+                <span class="up-button-card">
+                  <mat-icon title="Удалить" (click)="deleteCard(item.id, item.timeOfCompletion,item.name)" class="btn cursor-pointer delete-link">delete</mat-icon>
+                </span>
+                 <br />
+                <span class="card-font-size"><b>Приоритет:&nbsp;{{getPriority(item.priority)}}</b></span>
+                <br />
+                <span class="card-font-size"><b>Дата&nbsp;создания:&nbsp;{{item.date | date:'dd.MM.yyyy'}}</b></span>
+                <br />
+                <span class="card-font-size">
+                  {{item.name}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

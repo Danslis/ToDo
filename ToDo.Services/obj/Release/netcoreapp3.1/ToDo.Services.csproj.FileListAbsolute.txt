@@ -1,0 +1,11 @@
+C:\Projects\Work\ToDo\ToDo.Services\bin\Release\netcoreapp3.1\ToDo.Services.deps.json
+C:\Projects\Work\ToDo\ToDo.Services\bin\Release\netcoreapp3.1\ToDo.Services.dll
+C:\Projects\Work\ToDo\ToDo.Services\bin\Release\netcoreapp3.1\ToDo.Services.pdb
+C:\Projects\Work\ToDo\ToDo.Services\bin\Release\netcoreapp3.1\ToDo.DataAccess.dll
+C:\Projects\Work\ToDo\ToDo.Services\bin\Release\netcoreapp3.1\ToDo.DataAccess.pdb
+C:\Projects\Work\ToDo\ToDo.Services\obj\Release\netcoreapp3.1\ToDo.Services.csprojAssemblyReference.cache
+C:\Projects\Work\ToDo\ToDo.Services\obj\Release\netcoreapp3.1\ToDo.Services.AssemblyInfoInputs.cache
+C:\Projects\Work\ToDo\ToDo.Services\obj\Release\netcoreapp3.1\ToDo.Services.AssemblyInfo.cs
+C:\Projects\Work\ToDo\ToDo.Services\obj\Release\netcoreapp3.1\ToDo.Services.csproj.CopyComplete
+C:\Projects\Work\ToDo\ToDo.Services\obj\Release\netcoreapp3.1\ToDo.Services.dll
+C:\Projects\Work\ToDo\ToDo.Services\obj\Release\netcoreapp3.1\ToDo.Services.pdb
